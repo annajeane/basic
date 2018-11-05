@@ -1,5 +1,5 @@
 CREATE TABLE `News` (
-	`ID_News` varchar(11) NOT NULL AUTO_INCREMENT,
+	`ID_News` varchar(11) NOT NULL  ,
 	`Start` DATE NOT NULL,
 	`End` DATE NOT NULL,
 	`NewsTitle` VARCHAR(50) NOT NULL,
@@ -8,37 +8,37 @@ CREATE TABLE `News` (
 );
 
 CREATE TABLE `Images` (
-	`ID_Images` varchar(11) NOT NULL AUTO_INCREMENT,
+	`ID_Images` varchar(11) NOT NULL  ,
 	`ID_News` varchar(11) NOT NULL,
-	`ImageDesc` VARCHAR(200) NOT NULL AUTO_INCREMENT,
+	`ImageDesc` VARCHAR(200) NOT NULL  ,
 	PRIMARY KEY (`ID_Images`)
 );
 
 CREATE TABLE `Lecturer` (
-	`NIK` varchar(11) NOT NULL AUTO_INCREMENT,
-	`ID_User` VARCHAR(50) NOT NULL AUTO_INCREMENT,
-	`Email` VARCHAR(50) NOT NULL AUTO_INCREMENT,
-	`Name` VARCHAR(50) NOT NULL AUTO_INCREMENT,
+	`NIK` varchar(11) NOT NULL  ,
+	`ID_User` VARCHAR(50) NOT NULL  ,
+	`Email` VARCHAR(50) NOT NULL  ,
+	`Name` VARCHAR(50) NOT NULL  ,
 	PRIMARY KEY (`NIK`)
 );
 
 CREATE TABLE `User` (
-	`ID_User` varchar(11) NOT NULL AUTO_INCREMENT,
-	`Email` VARCHAR(50) NOT NULL AUTO_INCREMENT,
-	`Password` VARCHAR(20) NOT NULL AUTO_INCREMENT,
+	`ID_User` varchar(11) NOT NULL  ,
+	`Email` VARCHAR(50) NOT NULL  ,
+	`Password` VARCHAR(20) NOT NULL  ,
 	PRIMARY KEY (`ID_User`)
 );
 
 CREATE TABLE `CourseField` (
-	`NIK` varchar(11) NOT NULL AUTO_INCREMENT,
-	`ID_Course` varchar(11) NOT NULL AUTO_INCREMENT,
+	`NIK` varchar(11) NOT NULL  ,
+	`ID_Course` varchar(11) NOT NULL  ,
 	PRIMARY KEY (`NIK`,`ID_Course`)
 );
 
 CREATE TABLE `Course` (
-	`ID_Course` varchar(11) NOT NULL AUTO_INCREMENT,
-	`CourseTitle` VARCHAR(50) NOT NULL AUTO_INCREMENT,
-	`CourseDesc` VARCHAR(200) NOT NULL AUTO_INCREMENT,
+	`ID_Course` varchar(11) NOT NULL  ,
+	`CourseTitle` VARCHAR(50) NOT NULL  ,
+	`CourseDesc` VARCHAR(200) NOT NULL  ,
 	`CoursePurpose` VARCHAR(200) NOT NULL,
 	`Semester` INT NOT NULL,
 	`Precondition` varchar(11) NOT NULL,
@@ -47,7 +47,7 @@ CREATE TABLE `Course` (
 );
 
 CREATE TABLE `Student` (
-	`NIM` varchar(11) NOT NULL AUTO_INCREMENT,
+	`NIM` varchar(11) NOT NULL  ,
 	`ID_User` VARCHAR(50) NOT NULL,
 	`Name` VARCHAR(50) NOT NULL,
 	`Email` VARCHAR(50) NOT NULL,
@@ -65,15 +65,15 @@ CREATE TABLE `Facility` (
 );
 
 CREATE TABLE `EduBG` (
-	`ID_Edu` varchar(11) NOT NULL AUTO_INCREMENT,
-	`NIK` varchar(11) NOT NULL AUTO_INCREMENT,
+	`ID_Edu` varchar(11) NOT NULL  ,
+	`NIK` varchar(11) NOT NULL  ,
 	`EduTitle` VARCHAR(50) NOT NULL,
 	`EduDesc` VARCHAR(50) NOT NULL,
 	PRIMARY KEY (`ID_Edu`)
 );
 
 CREATE TABLE `Position` (
-	`ID_Position` varchar(11) NOT NULL AUTO_INCREMENT,
+	`ID_Position` varchar(11) NOT NULL  ,
 	`NIK` varchar(11) NOT NULL,
 	`PosType` BINARY NOT NULL,
 	`PosTitle` varchar(50) NOT NULL,
@@ -81,19 +81,19 @@ CREATE TABLE `Position` (
 );
 
 CREATE TABLE `ResearchArea` (
-	`ID_RA` varchar(11) NOT NULL AUTO_INCREMENT,
-	`NIK` varchar(11) NOT NULL AUTO_INCREMENT,
+	`ID_RA` varchar(11) NOT NULL  ,
+	`NIK` varchar(11) NOT NULL  ,
 	`RATitle` VARCHAR(50) NOT NULL,
 	`RADesc` VARCHAR(50) NOT NULL,
 	PRIMARY KEY (`ID_RA`)
 );
 
 CREATE TABLE `Publication` (
-	`ID_Publication` varchar(11) NOT NULL AUTO_INCREMENT,
-	`ID_RA` varchar(11) NOT NULL AUTO_INCREMENT,
-	`NIK` varchar(11) NOT NULL AUTO_INCREMENT,
-	`PubTitle` VARCHAR(50) NOT NULL AUTO_INCREMENT,
-	`PubDesc` VARCHAR(200) NOT NULL AUTO_INCREMENT,
+	`ID_Publication` varchar(11) NOT NULL  ,
+	`ID_RA` varchar(11) NOT NULL  ,
+	`NIK` varchar(11) NOT NULL  ,
+	`PubTitle` VARCHAR(50) NOT NULL  ,
+	`PubDesc` VARCHAR(200) NOT NULL  ,
 	PRIMARY KEY (`ID_Publication`)
 );
 
